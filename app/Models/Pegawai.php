@@ -21,5 +21,7 @@ class Pegawai extends Model
         'email',
         'telepon',
         'gender',
+        'status',
      ];
 }
+

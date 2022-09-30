@@ -40,10 +40,11 @@
                                     <th class="text-center">Email</th>
                                     <th class="text-center">Telepon</th>
                                     <th class="text-center">Gender</th>
+                                    <th class="text-center">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($departemen as $item)
+                                @forelse($pegawai as $item)
                                 <tr>
                                     <td class="text-center">{{$item->nomor_induk_pegawai}}</td>
                                     <td class="text-center">{{$item->nama_pegawai}}</td>
@@ -51,6 +52,7 @@
                                     <td class="text-center">{{$item->email}}</td>
                                     <td class="text-center">{{$item->telepon}}</td>
                                     <td class="text-center">{{$item->gender}}</td>
+                                    <td class="text-center">{{$item->status}}</td>
                                 </tr>
                                 @empty
                                 <div class="alert alert-danger">Data Pegawai belum tersedia</div>

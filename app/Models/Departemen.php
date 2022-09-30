@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Departemen extends Model
 {
-    use HasFactory;
-    /**
-     * filelable
-     * 
-     * @var array
-     */
+use HasFactory;
+/**
+* fillable
+*
+* @var array
+*/
 
-     protected $fillable = [
-        'nama_departemen',
-        'nama_manager',
-        'jumlah_pegawai',
-     ];
+protected $fillable = [
+   'nama_departemen',
+   'nama_manager',
+   'jumlah_pegawai',
+   ]; 
 }
