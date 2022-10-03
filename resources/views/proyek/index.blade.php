@@ -62,7 +62,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        <div>
+                        <div class="d-flex justify-content-center">
                             {{$proyek->links()}}
                         </div>
                         </div>
