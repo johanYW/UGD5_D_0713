@@ -5,13 +5,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">Pegawai</h1>
+                <h1 class="m-0">Proyek</h1>
             </div>
             <!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">
-                        <a href="{{ url('pegawai')}}">Pegawai</a>
+                        <a href="{{ url('proyek')}}">Proyek</a>
                     </li>
                     <li class="breadcrumb-item active">Index</li>
                 </ol>
@@ -34,42 +34,37 @@
                         <table class="table table hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th class="text-center">Nomor Induk</th>
-                                    <th class="text-center">Nama Pegawai</th>
+                                    <th class="text-center">Nama Proyek</th>
                                     <th class="text-center">ID Departemen</th>
-                                    <th class="text-center">Email</th>
-                                    <th class="text-center">Telepon</th>
-                                    <th class="text-center">Gender</th>
+                                    <th class="text-center">Waktu Mulai</th>
+                                    <th class="text-center">Waktu Selesai</th>
                                     <th class="text-center">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                              
-                                @forelse($pegawai as $item)
+                                @forelse($proyek as $item)
                                 <tr>
-                                    <td class="text-center">{{$item->nomor_induk_pegawai}}</td>
-                                    <td class="text-center">{{$item->nama_pegawai}}</td>
+                                    <td class="text-center">{{$item->nama_proyek}}</td>
                                     <td class="text-center">{{$item->id_departemen}}</td>
-                                    <td class="text-center">{{$item->email}}</td>
-                                    <td class="text-center">{{$item->telepon}}</td>
-                                    <td class="text-center">
-                                        @if($item->gender == 1)
-                                        <a>Pria</a>
-                                        @else
-                                        <a>Wanita</a>
-                                        @endif</td>
+                                    <td class="text-center">{{$item->waktu_mulai}}</td>
+                                    <td class="text-center">{{$item->waktu_selesai}}</td>
                                     <td class="text-center">
                                         @if($item->status == 1)
                                         <a>Berjalan</a>
                                         @else
                                         <a>Selesai</a>
-                                        @endif</td>
+                                        @endif
+                                    </td>
                                 </tr>
                                 @empty
-                                <div class="alert alert-danger">Data Pegawai belum tersedia</div>
+                                <div class="alert alert-danger">Data Proyek belum tersedia</div>
                                 @endforelse
                             </tbody>
                         </table>
+                        <div>
+                            {{$proyek->links()}}
+                        </div>
                         </div>
                     </div>
                 </div>
