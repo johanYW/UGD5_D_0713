@@ -12,6 +12,10 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     </head>
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
@@ -143,6 +147,7 @@
                 </strong>All rights reserved
             </footer>
         </div>
+        
         <!-- ./wrapper -->
         <!-- REQUIRED SCRIPTS -->
         <!-- jQuery -->
@@ -151,5 +156,11 @@
         <script src="{{ asset('plugins/js/bootstrap.bundle.min.js')}}"></script>
         <!-- AdminLTE App -->
         <script src="{{ asset('js/adminlte.min.js') }}"></script>
+        <script>
+            if(Session ('success'))
+                toastr.success("{{ Session::get('success') }}");
+            endif
+        </script>
+        
     </body>
 </html>

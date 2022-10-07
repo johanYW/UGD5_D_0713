@@ -30,6 +30,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                    <a href="{{route('pegawai.create')}}" class="btn btn-md btn-success mb-3">TAMBAH PEGAWAI</a>
                         <div class="table-responsive p-0">
                         <table class="table table hover text-nowrap">
                             <thead>
@@ -41,6 +42,8 @@
                                     <th class="text-center">Telepon</th>
                                     <th class="text-center">Gender</th>
                                     <th class="text-center">Status</th>
+                                    <th class="text-center">Aksi</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -57,13 +60,22 @@
                                         <a>Pria</a>
                                         @else
                                         <a>Wanita</a>
-                                        @endif</td>
+                                        @endif
+                                    </td>
                                     <td class="text-center">
                                         @if($item->status == 1)
                                         <a>Berjalan</a>
                                         @else
                                         <a>Selesai</a>
                                         @endif</td>
+                                        <td class="text-center">
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('pegawai.destroy',$item->id)}}" method="POST">
+                                        <a href="{{route('pegawai.edit',$item->id)}}" class="btn btn-sm btn-primary">EDIT</a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @empty
                                 <div class="alert alert-danger">Data Pegawai belum tersedia</div>
@@ -72,6 +84,7 @@
                         </table>
                         </div>
                     </div>
+                    <div class="d-flex justify-content-center">{{$pegawai->links()}}</div>
                 </div>
                 <!-- /.card-body -->
             </div>

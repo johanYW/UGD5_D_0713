@@ -24,3 +24,4 @@ Route::resource('/pegawai',
 \App\Http\Controllers\PegawaiController::class);
 Route::resource('/proyek',
 \App\Http\Controllers\ProyekController::class);
+
