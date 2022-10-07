@@ -33,7 +33,7 @@ class DepartemenController extends Controller
     public function destroy($id){
       Departemen::find($id)->delete();
 
-      return redirect()->route('departemen.index')->withSuccess(__('post delete sukses'));
+      return redirect()->route('departemen.index')->with(['success' => 'Data berhasil dihapus']);
     }
 
    /**

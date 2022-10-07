@@ -156,11 +156,9 @@
         <script src="{{ asset('plugins/js/bootstrap.bundle.min.js')}}"></script>
         <!-- AdminLTE App -->
         <script src="{{ asset('js/adminlte.min.js') }}"></script>
-        <script>
-            if(Session ('success'))
-                toastr.success("{{ Session::get('success') }}");
-            endif
-        </script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+        
         
     </body>
 </html>
