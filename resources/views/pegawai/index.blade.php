@@ -67,8 +67,9 @@
                                         <a>Berjalan</a>
                                         @else
                                         <a>Selesai</a>
-                                        @endif</td>
-                                        <td class="text-center">
+                                        @endif
+                                    </td>
+                                    <td class="text-center">
                                         <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('pegawai.destroy',$item->id)}}" method="POST">
                                         <a href="{{route('pegawai.edit',$item->id)}}" class="btn btn-sm btn-primary">EDIT</a>
                                         @csrf

@@ -46,7 +46,7 @@ class PegawaiController extends Controller
            'email' => 'required',
             'telepon' => 'required',
             'gender' => 'required',
-            'status' => 'required'
+            
         ]);
 
         Pegawai::create([

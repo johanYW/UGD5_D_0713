@@ -103,10 +103,11 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="font-wight-bold">Status</label>
-                                    <input type="text" class="form-control @error('status') is-invalid @enderror" 
-                                    name="status" value="{{ old('status')}}" 
-                                    placeholder="Masukkan Nomor Status">
+                                    <label class="font-weight-bold">Status</label>
+                                    <select class="form-control @error('status') is-invalid @enderror" name="status" value="{{ old('waktu_selesai') }}">
+                                        <option value="1">Berjalan</option>
+                                        <option value="0">Selesai</option>
+                                    </select>
                                     @error('status')
                                     <div class="invalid-feedback">
                                         {{$message}}

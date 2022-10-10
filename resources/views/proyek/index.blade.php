@@ -30,6 +30,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                    <a href="{{route('proyek.create')}}" class="btn btn-md btn-success mb-3">TAMBAH PROYEK</a>
                         <div class="table-responsive p-0">
                         <table class="table table hover text-nowrap">
                             <thead>
@@ -39,6 +40,7 @@
                                     <th class="text-center">Waktu Mulai</th>
                                     <th class="text-center">Waktu Selesai</th>
                                     <th class="text-center">Status</th>
+                                    <th class="text-center">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,6 +57,14 @@
                                         @else
                                         <a>Selesai</a>
                                         @endif
+                                    </td>
+                                    <td class="text-center">
+                                        <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{route('proyek.destroy',$item->id)}}" method="POST">
+                                        <a href="{{route('proyek.edit',$item->id)}}" class="btn btn-sm btn-primary">EDIT</a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @empty
